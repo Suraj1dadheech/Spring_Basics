@@ -1,4 +1,4 @@
-package com.suraj.springdemo;
+package com.suraj.constructorDepn;
 
 public class MyApp {
 

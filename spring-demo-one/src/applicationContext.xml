@@ -7,9 +7,43 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- Define your beans here -->
+	<!-- Logger Object --> 
+    <bean id="myLoggerConfig" class="com.suraj.constructorDepn.MyLoggerConfig" init-method="initLogger">
+    	<property name="rootLoggerLevel" value="FINE" />
+    	<property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+    
+	<!-- HappyFortune Object -->
+    <bean id="myFortune"  class="com.suraj.constructorDepn.HappyFortuneService">
+    	<!-- <property name="message" value="have a good Day!"/> -->
+    </bean>
+    
+   	<!-- DullFortune Object -->
+    <bean id="myBadFortune"  class="com.suraj.constructorDepn.DullFortune">
+    </bean>
+    
+   	<!-- BaseballCoach Object -->
     <bean id="myCoach"
-    		class="com.suraj.springdemo.TrackCoach">
+    		class="com.suraj.constructorDepn.BaseballCoach">
+    		
+    		<!-- Setting up constructor injection -->
+    		<constructor-arg ref="myFortune"/>
+    </bean>
+
+	<!-- HockeyCoach Object -->
+    <bean id="myCoach1"
+    		class="com.suraj.constructorDepn.HockeyCoach">
+    		
+    		<!-- Setting up constructor injection -->
+    		<constructor-arg ref="myBadFortune"/>
+    </bean>
+    
+   	<!-- CricketCoach Object -->
+    <bean id="cricketCoach"
+    		class="com.suraj.constructorDepn.CricketCoach">
+    		
+    		<!-- Setting up Setter injection -->
+			<property name="fortuneService" ref="myFortune"/>
     </bean>
     
 </beans>
