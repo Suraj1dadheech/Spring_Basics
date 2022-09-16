@@ -12,6 +12,14 @@ public class SetterCricket {
 		Coach theCoach2 = context.getBean("cricketCoach",Coach.class);
 		
 		System.out.println(theCoach2.getDailyFortune());
+	
+		
+		System.out.println("************************String Literals*************************************");
+		
+		CricketCoach cricketCoach = context.getBean("myCricketCoach",CricketCoach.class);
+		System.out.println(cricketCoach.getEmailAddress());
+		System.out.println(cricketCoach.getTeam());
+		
 		
 		context.close();
 

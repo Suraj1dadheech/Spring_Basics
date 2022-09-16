@@ -31,6 +31,11 @@ public class HelloSpringApp {
 		// close the context
 		
 		
+		System.out.println("************************Random Fortune *************************************");
+		
+		FortuneService fortuneService = context.getBean("randomFortune",RandomFortune.class);
+		
+		System.out.println(fortuneService.getFortune());
 		
 		context.close();
 

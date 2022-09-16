@@ -46,6 +46,18 @@
 			<property name="fortuneService" ref="myFortune"/>
     </bean>
     
+    <!-- Load the properties file: sport.properties -->
+    <context:property-placeholder location="classpath:sport.properties"/>
+    
+    <bean id="myCricketCoach" class="com.suraj.constructorDepn.CricketCoach">
+    	<property name="emailAddress" value="${foo.email}"/>
+    	<property name="team" value="${foo.team}"/>
+    </bean>
+    
+    <!-- RandomFortune Class Object -->
+    <bean id="randomFortune" class="com.suraj.constructorDepn.RandomFortune">
+    </bean>
+    
 </beans>
 
 

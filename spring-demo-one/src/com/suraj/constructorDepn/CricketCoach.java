@@ -1,12 +1,31 @@
 package com.suraj.constructorDepn;
 
-public class CricketCoach implements Coach {
+public class CricketCoach implements Coach {	
+	
+	private String emailAddress;
+	private String team;
 	
 	private FortuneService fortuneService;
-
+	
 	public CricketCoach() {
 		System.out.println("inside Cricket Constructor");
 	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+	
+	public String getTeam() {
+		return team;
+	}
+	public void setTeam(String team) {
+		this.team = team;
+	}
+	
+	
 	public void setFortuneService(FortuneService fortuneService) {
 		System.out.println("inside Cricket setter Method");
 		this.fortuneService = fortuneService;
